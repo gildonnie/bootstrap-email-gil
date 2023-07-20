@@ -4,16 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Postman</title>
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=VT323&display=swap" rel="stylesheet">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="container-fluid text-center">
+    <div id="mySidenav" class="sideNav d-flex align-items-center justify-content-center d-md-none">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul>
+        <li><i class="fa-solid fa-inbox mx-3"></i>Inbox</li>
+        <li><i class="fa-solid fa-envelope-circle-check mx-3"></i>Sent</li>
+        <li><i class="fa-solid fa-scroll mx-3"></i>Drafts</li>
+        <li><i class="fa-solid fa-triangle-exclamation mx-3"></i>Spam</li>
+        <li><i class="fa-solid fa-trash-can mx-3"></i>Deleted</li>
+      </ul>
+    </div>
+    <div class="row top-row py-4">
+      <div class="col-xs search-bar d-md-flex flex-row flex-align-center justify-content-between align-items-center">
+        <div class="logo d-none d-md-inline-block">
+          <a href="index.html"><img src="./imgs/graylogo.png" alt="logo"></a>
+        </div>
+        <div class="search-bar">
+          <nav class="navbar custom-nav  navbar-expand-md d-flex flex-column">
+            <form class="form-inline my-2 my-lg-0 w-100">
+              <div class="search-container d-flex flex-row justify-content-between align-items-center rounded-5 px-3"
+              >
+                <i class="fa-solid fa-bars d-inline-block d-md-none" onclick="openNav()"></i>
+                <input type="text" placeholder="Search" class="input-search">
+                <div class="nav-profile d-md-none"><img src="./imgs/SlefImg.png" alt="profile"></div>
+                <i class="fa-solid fa-magnifying-glass d-none d-md-block"></i>
+              </div>
+            </form>
+          </nav>
+       </div>
+       <div class="nav-profile d-none d-md-inline-block">
+        <img src="./imgs/SlefImg.png" alt="profile">
+       </div>
+      </div>
+    </div>
+    <div class="row content-row">
+      <div class="col-xs folder-container d-none d-md-flex flex-column justify-content-center align-items-center col-md-4 col-xl-3">
+        <button type="button" class="compose-button" data-toggle="tooltip" data-placement="top" title="Send Email">Compose</button>
+        <div class="email-folders">
+          <ul>
+            <li><i class="fa-solid fa-inbox mx-2"></i>Inbox</li>
+            <li><i class="fa-solid fa-envelope-circle-check mx-2"></i>Sent</li>
+            <li><i class="fa-solid fa-scroll mx-2"></i>Drafts</li>
+            <li><i class="fa-solid fa-triangle-exclamation mx-2"></i>Spam</li>
+            <li><i class="fa-solid fa-trash-can mx-2"></i>Deleted</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs col-md-8 col-xl-4 email-container mt-2 p-0">
+        <div id="emails-container" class="emails d-flex flex-column justify-content-between px-2" onclick="emailClicked()"></div>
+      </div>
+      <div class="col-xs reply-container col-xl-5 selected-email d-flex flex-column py-3">
+        <div class="emailClicked" id="emailId"></div>
+      </div>
+     
+    </div>
+  </div>
 
-
-
-
-
-
+  <script src="./functions.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
